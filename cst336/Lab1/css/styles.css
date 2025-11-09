@@ -75,3 +75,45 @@ ul {
 .hobby {
     color: yellow;
 }
+
+/* Center the Google Form on the contact page */
+#content {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+/* Footer styling for all pages */
+footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #cccccc;
+    margin-top: 40px;
+}
+
+/* Center the CSUMB logo inside the footer */
+footer img {
+    display: block;
+    margin: 10px auto;
+}
+
+/* Highlight the active page link in navigation */
+nav a.active {
+    color: orange;
+    font-weight: bold;
+    border-bottom: 2px solid orange;
+}
+
+/* Navigation hover effect */
+nav a:hover {
+    color: #ffcc66;
+    transition: color 0.3s;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Normal weight */
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
