@@ -1,0 +1,77 @@
+body {
+    background-color: black;
+    color: gray;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+header, nav, main, footer {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    padding: 15px;
+    font-size: 1.8em;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    border-bottom: 2px orange solid;
+    font-size: 2em;
+    transition: 0.9s;
+}
+
+nav .active {
+    color: orange;
+    font-weight: bold;
+}
+
+footer {
+    font-size: 0.8em;
+    color: lightgray;
+    margin-top: 30px;
+}
+
+#content {
+    margin: 0 auto;
+}
+
+table {
+    margin: 0 auto;
+}
+
+td {
+    padding-right: 10px;
+    font-size: 1.3em;
+}
+
+td strong {
+    color: orange;
+}
+
+#table-header {
+    background-color: #351a00;
+}
+
+.table-row {
+    background-color: #753900;
+}
+
+ul {
+    width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.hobby {
+    color: yellow;
+}
