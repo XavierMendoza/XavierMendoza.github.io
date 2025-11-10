@@ -1,0 +1,241 @@
+/* ====== Theme colors ====== */
+:root {
+  --bg: #121212;        /* Page background */
+  --panel: #1e1e1e;     /* Card / section background */
+  --text: #e6e6e6;      /* Primary text color */
+  --muted: #b6b6b6;     /* Secondary text */
+  --gold: #d4af37;      /* Accent color */
+  --link: #e8c96b;      /* Link color */
+}
+
+/* ====== Basic reset and defaults ====== */
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* All images responsive */
+img { max-width: 100%; display: block; }
+
+/* ====== Links ====== */
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--gold); }
+
+/* ====== Header & Navigation ====== */
+.site-header {
+  position: sticky;     /* Stays at top while scrolling */
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(180deg, #0e0e0e, rgba(14,14,14,0.9));
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(6px);
+}
+
+/* Brand area: logo + title */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .75rem 1rem;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: grayscale(20%);
+}
+
+.brand-name {
+  font-weight: 600;
+  letter-spacing: .4px;
+}
+
+/* Navigation links */
+.nav {
+  display: flex;
+  gap: .75rem;
+  padding: 0 1rem 1rem 1rem;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  padding: .5rem .8rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  transition: all .2s ease;
+}
+
+/* Active or hovered nav link */
+.nav a.active,
+.nav a:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ====== Main layout container ====== */
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* ====== Hero section ====== */
+.hero {
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+}
+
+/* Headline / subhead under hero video */
+.athlete-name { margin: .5rem 0 0 0; letter-spacing: .3px; }
+.athlete-sub { margin: .25rem 0 1rem 0; color: var(--muted); }
+
+/* Responsive video container (16:9) */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ====== Buttons ====== */
+.quick-links {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 .5rem 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: .6rem 1rem;
+  border-radius: 10px;
+  background: #2a2a2a;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform .15s ease, border-color .2s ease, color .2s ease;
+}
+
+/* Hover and accent button */
+.btn:hover {
+  transform: translateY(-1px);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.btn-accent {
+  background: linear-gradient(90deg, #7a5e17, var(--gold));
+  color: #111;
+  font-weight: 600;
+}
+
+/* ====== Cards and grids ====== */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+/* Generic card style used on most pages */
+.card {
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+/* ====== Images ====== */
+.profile-photo {
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.transcript-thumb {
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Muted smaller text (notes, captions) */
+.muted { color: var(--muted); font-size: .95rem; }
+
+/* ====== Stats grid for Measurables ====== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.stat {
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.4rem;
+  margin-top: .25rem;
+  color: var(--gold);
+}
+
+/* Notes list styling */
+.notes { margin: .5rem 0 0 1rem; }
+
+/* ====== Film page grid ====== */
+.film-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* ====== Google Form wrapper ====== */
+.form-wrapper {
+  background: #101010;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+
+/* ====== Footer ====== */
+.site-footer {
+  margin: 3rem 0 2rem 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ====== Responsive adjustments ====== */
+@media (max-width: 900px) {
+  .profile-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .stats-grid { grid-template-columns: 1fr; }
+  .nav { gap: .5rem; }
+}
