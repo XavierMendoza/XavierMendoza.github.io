@@ -8,7 +8,7 @@
   --link: #e8c96b;      /* Link color */
 }
 
-/* ====== Basic reset and defaults ====== */
+/* ====== Base reset ====== */
 * { box-sizing: border-box; }
 
 html, body {
@@ -20,29 +20,28 @@ html, body {
   line-height: 1.6;
 }
 
-/* All images responsive */
 img { max-width: 100%; display: block; }
 
-/* ====== Links ====== */
 a { color: var(--link); text-decoration: none; }
 a:hover { color: var(--gold); }
 
-/* ====== Header & Navigation ====== */
+/* ====== Header & Navigation (updated) ====== */
 .site-header {
-  position: sticky;     /* Stays at top while scrolling */
+  position: sticky;
   top: 0;
   z-index: 1000;
-  background: linear-gradient(180deg, #0e0e0e, rgba(14,14,14,0.9));
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  backdrop-filter: blur(6px);
+  background-color: #0e0e0e;               /* dark main bar */
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
-/* Brand area: logo + title */
+/* Brand title (logo + text) */
 .brand {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: .6rem;
-  padding: .75rem 1rem;
+  padding: .75rem 1rem .5rem 1rem;
 }
 
 .logo {
@@ -53,30 +52,48 @@ a:hover { color: var(--gold); }
 }
 
 .brand-name {
-  font-weight: 600;
-  letter-spacing: .4px;
-}
-
-/* Navigation links */
-.nav {
-  display: flex;
-  gap: .75rem;
-  padding: 0 1rem 1rem 1rem;
-  flex-wrap: wrap;
-}
-
-.nav a {
-  padding: .5rem .8rem;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 8px;
-  transition: all .2s ease;
-}
-
-/* Active or hovered nav link */
-.nav a.active,
-.nav a:hover {
-  border-color: var(--gold);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: .5px;
   color: var(--gold);
+}
+
+/* Secondary background bar behind navigation links */
+.nav {
+  background-color: #191919;               /* subtle contrast bar */
+  display: flex;
+  justify-content: center;                 /* centers the buttons horizontally */
+  gap: 1rem;
+  padding: .6rem 1rem;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Nav button styles */
+.nav a {
+  color: var(--text);
+  padding: .5rem 1.1rem;
+  border-radius: 6px;
+  background-color: #1f1f1f;               /* small contrast for buttons */
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all .25s ease;
+  font-weight: 500;
+}
+
+/* Hover and active states */
+.nav a:hover {
+  color: var(--gold);
+  background-color: #2a2a2a;
+  box-shadow: 0 0 10px rgba(212,175,55,0.3);
+}
+
+.nav a.active {
+  background: var(--gold);
+  color: #111;
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(212,175,55,0.45);
+  transform: scale(1.02);
 }
 
 /* ====== Main layout container ====== */
@@ -95,11 +112,10 @@ a:hover { color: var(--gold); }
   box-shadow: 0 10px 24px rgba(0,0,0,0.35);
 }
 
-/* Headline / subhead under hero video */
 .athlete-name { margin: .5rem 0 0 0; letter-spacing: .3px; }
 .athlete-sub { margin: .25rem 0 1rem 0; color: var(--muted); }
 
-/* Responsive video container (16:9) */
+/* Responsive video container */
 .video-wrapper {
   position: relative;
   width: 100%;
@@ -119,7 +135,8 @@ a:hover { color: var(--gold); }
 /* ====== Buttons ====== */
 .quick-links {
   display: flex;
-  gap: .5rem;
+  justify-content: center;
+  gap: .6rem;
   flex-wrap: wrap;
   margin: 1rem 0 .5rem 0;
 }
@@ -134,16 +151,23 @@ a:hover { color: var(--gold); }
   transition: transform .15s ease, border-color .2s ease, color .2s ease;
 }
 
-/* Hover and accent button */
 .btn:hover {
   transform: translateY(-1px);
   border-color: var(--gold);
   color: var(--gold);
 }
+
+/* Smooth highlight for accent buttons */
 .btn-accent {
   background: linear-gradient(90deg, #7a5e17, var(--gold));
   color: #111;
   font-weight: 600;
+  box-shadow: 0 0 12px rgba(212,175,55,0.25);
+  transition: all .3s ease;
+}
+.btn-accent:hover {
+  box-shadow: 0 0 22px rgba(212,175,55,0.45);
+  transform: translateY(-2px);
 }
 
 /* ====== Cards and grids ====== */
@@ -154,15 +178,21 @@ a:hover { color: var(--gold); }
   margin: 1rem 0;
 }
 
-/* Generic card style used on most pages */
+/* Slight glowing border on cards */
 .card {
   background: var(--panel);
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 14px;
   padding: 1rem;
+  box-shadow: 0 0 8px rgba(212,175,55,0.08);
+  transition: box-shadow .3s ease, transform .2s ease;
+}
+.card:hover {
+  box-shadow: 0 0 16px rgba(212,175,55,0.18);
+  transform: translateY(-2px);
 }
 
-/* ====== Images ====== */
+/* ====== Image and text adjustments ====== */
 .profile-photo {
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.1);
@@ -173,10 +203,9 @@ a:hover { color: var(--gold); }
   border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Muted smaller text (notes, captions) */
 .muted { color: var(--muted); font-size: .95rem; }
 
-/* ====== Stats grid for Measurables ====== */
+/* ====== Stats grid ====== */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -191,20 +220,9 @@ a:hover { color: var(--gold); }
   text-align: center;
 }
 
-.stat-label {
-  display: block;
-  color: var(--muted);
-  font-size: .95rem;
-}
+.stat-label { display: block; color: var(--muted); font-size: .95rem; }
+.stat-value { display: block; font-size: 1.4rem; margin-top: .25rem; color: var(--gold); }
 
-.stat-value {
-  display: block;
-  font-size: 1.4rem;
-  margin-top: .25rem;
-  color: var(--gold);
-}
-
-/* Notes list styling */
 .notes { margin: .5rem 0 0 1rem; }
 
 /* ====== Film page grid ====== */
@@ -222,11 +240,26 @@ a:hover { color: var(--gold); }
   overflow: hidden;
 }
 
-/* ====== Footer ====== */
+/* ====== Footer (new enhanced style) ====== */
 .site-footer {
-  margin: 3rem 0 2rem 0;
+  margin-top: 3rem;
+  background: #0e0e0e;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 1.2rem 0;
   text-align: center;
   color: var(--muted);
+  font-size: .95rem;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.6);
+}
+
+/* Add a thin lighter strip above footer for accent */
+.site-footer::before {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin-bottom: .5rem;
 }
 
 /* ====== Responsive adjustments ====== */
