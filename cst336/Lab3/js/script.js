@@ -146,13 +146,13 @@ async function populateStates() {
 }
 
 
-// 8–9. Validate password rules and form data
+// 8–9. Validate password rules and form data (fixed)
 function validateForm(e) {
   let isValid = true;
 
   const username = document.querySelector("#username").value.trim();
-  const password = document.querySelector("#password").value;
-  const retype = document.querySelector("#retype").value;
+  const password = document.querySelector("#password").value.trim();
+  const retype = document.querySelector("#password2").value.trim(); // <-- fixed ID
   const usernameError = document.querySelector("#usernameError");
   const passwordError = document.querySelector("#passwordError");
 
