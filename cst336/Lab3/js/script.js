@@ -152,7 +152,7 @@ function validateForm(e) {
 
   const username = document.querySelector("#username").value.trim();
   const password = document.querySelector("#password").value.trim();
-  const retype = document.querySelector("#password2").value.trim(); // <-- fixed ID
+  const retype = document.querySelector("#password2").value.trim(); 
   const usernameError = document.querySelector("#usernameError");
   const passwordError = document.querySelector("#passwordError");
 
