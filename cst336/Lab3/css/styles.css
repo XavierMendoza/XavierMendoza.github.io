@@ -1,0 +1,23 @@
+
+body { letter-spacing: .1px; background-color: #f8f9fa; }
+h1 { font-weight: 600; }
+.card { border: none; border-radius: 14px; }
+.card-body { background: #fff; }
+.form-label { color: #374151; font-weight: 500; }
+.form-control, .form-select { border-radius: 8px; }
+button.btn { border-radius: 8px; }
+#usernameError, #zipError { font-weight: 600; }
+#suggestedPwd { color: #6c757d; font-style: italic; }
+#passwordError { font-weight: 600; }
+.fw-medium { font-weight: 600; }
+footer { background: #f9fafb; color: #6c757d; }
+footer:hover { color: #495057; }
+.form-check-input:checked { background-color: #0d6efd; border-color: #0d6efd; }
+.btn-primary { background-color: #0d6efd; border: none; }
+.btn-primary:hover { background-color: #0b5ed7; }
+.text-primary { color: #0d6efd !important; }
+.form-text { font-size: .9rem; }
+.border-top { border-color: #dee2e6 !important; }
+small { font-size: .85rem; }
+.mt-5 { margin-top: 3rem !important; }
+.py-3 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
